@@ -1,35 +1,21 @@
 <template>
-  <div class="inputBox shadow">
-    <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo"/>
-    <button v-on:click="addTodo"><i class="fas fa-plus"></i></button>
-    <span class="addContainer"></span>
+  <div class="inputBox">
+    <input type="text"/>
+    <button class="addContainer"><i class="fas fa-plus addBtn"></i></button>
   </div>
 </template>
 
 <script>
 export default {
-    data:function(){
-        return {
-            newTodoItem:''
-        }
-    },
-    methods:{
-        addTodo:function(){
-            
-            localStorage.setItem(this.newTodoItem,this.newTodoItem);
-            this.clearInput();
-        },
-        clearInput:function(){
-            this.newTodoItem = '';
-        }
-    }
-}
+  
+};
 </script>
 
 <style scoped>
 input:focus{outline: none;}
-.inputBox{border-radius: 5px;overflow: hidden;border: 1px solid #333;;margin: 0 auto;max-width: 347px;box-sizing: border-box;}
-.inputBox input{border: none;font-size: 24px;}
-.addContainer{float: right;background: #ddd;display: block;width: 2rem;border-radius: 0 5px 5px 0;;}
-.inputBox button{color:#682fa4;vertical-align: middle;border: none;line-height: 45px;width: 45px;}
+.inputBox{background:#fff; height: 50px;line-height: 50px;border-radius: 5px;}
+.inputBox input{border-style: none; font-size: 0.9rem;height: 50px;line-height: 50px;}
+.addContainer{float: right;background:linear-gradient(to right, #6478fb,#8763fb);display: block;width: 3rem;border-radius: 0 5px 5px 0;border: 0;padding: 0;}
+.addBtn{color:#fff; vertical-align: middle;font-size: 1.5rem;line-height: 50px;cursor: pointer;}
+.addBtn i{border: 0;padding: 0;}
 </style>
