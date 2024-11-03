@@ -4,11 +4,10 @@
     <button class="addContainer" v-on:click="addToDo" ><i class="fas fa-plus addBtn"></i></button>
     <!-- app -->
     <div id="app">
+      <button id="show-modal" @click="showModal = true">Show Modal</button>
       <!-- use the modal component, pass in the prop -->
       <AlertPop v-if="showModal" @close="showModal = false">
         <h3 slot="header">warning !</h3>
-        <p slot="body">내용을 입력해주셈</p>
-        <div slot="footer"><i class="fas fa-times closeModalBtn"  @click="showModal = false"></i></div>
       </AlertPop>
     </div>
   </div>
@@ -54,7 +53,6 @@ input:focus{outline: none;}
 .addContainer{float: right;background:linear-gradient(to right, #6478fb,#8763fb);display: block;width: 3rem;border-radius: 0 5px 5px 0;border: 0;padding: 0;}
 .addBtn{color:#fff; vertical-align: middle;font-size: 1.5rem;line-height: 50px;cursor: pointer;}
 .addBtn i{border: 0;padding: 0;}
-.closeModalBtn{color: #42b983;font-size: 30px;}
 .modal-mask {
   position: fixed;
   z-index: 9998;

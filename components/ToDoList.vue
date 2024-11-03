@@ -1,12 +1,12 @@
 <template>
   <div>
-    <transition-group name="list" tag="ul">
+    <ul>
       <li class="shadow" v-for="(TodoItem , index) in propsdata" v-bind:key="TodoItem.item">
          <span class="ckeckBtn" v-bind:class="{checkBtnCompleted:TodoItem.completed}" v-on:click="toggleTodo(TodoItem,index)"><i class="fas fa-check"></i></span>
           <p v-bind:class="{textCompleted:TodoItem.completed}">{{TodoItem.item}}</p>
           <button class="removeBtn" v-on:click="removeTodo(TodoItem,index)"><i class="fa-solid fa-trash-can"></i></button>
       </li>
-    </transition-group>
+    </ul>
   </div>
 </template>
 
@@ -35,12 +35,4 @@ li p{margin: 0;;}
 .checkBtnCompleted{color:#b3adad}
 .textCompleted{text-decoration: line-through;color:#b3adad}
 .removeBtn{margin-left: auto;color: #de4343;border: 0;background: #fff;}
-/* transition css */
-.list-enter-active, .list-leave-active {
-  transition: all 1s;
-}
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
-}
 </style>

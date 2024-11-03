@@ -1,5 +1,5 @@
 <template>
-    <div><header></header></div>
+    <div><header>to do it</header></div>
 </template>
 
 <script>
@@ -8,6 +8,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+header{text-transform: uppercase;font-size: 3rem;font-weight: 900;}
 </style>
