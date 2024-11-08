@@ -26,7 +26,7 @@ export default {
   methods:{
     addOneItem:function(TodoItem){
       //오브젝트 형태로 만들기
-      var obj = {completed:false,item:TodoItem};
+      const obj = {completed:false,item:TodoItem};
       //로컬스토리지에 추가
       localStorage.setItem(TodoItem,JSON.stringify(obj));
       //배열 끝에 요소 추가
