@@ -18,13 +18,13 @@ import ToDoFooter from "./components/ToDoFooter.vue";
 
 
 export default {
-  data:function(){
+  data(){
     return{
       todoItems:[]
     }
   },
   methods:{
-    addOneItem:function(TodoItem){
+    addOneItem(TodoItem){
       //오브젝트 형태로 만들기
       const obj = {completed:false,item:TodoItem};
       //로컬스토리지에 추가
@@ -32,13 +32,13 @@ export default {
       //배열 끝에 요소 추가
       this.todoItems.push(obj);
     },
-    removeOneItem:function(TodoItem,index){
+    removeOneItem(TodoItem,index){
       //로컬스토리지에서 삭제
       localStorage.removeItem(TodoItem.item);
       //배열에서 삭제
       this.todoItems.splice(index,1);
     },
-    toggleOneItem:function(TodoItem , index){
+    toggleOneItem(TodoItem , index){
       //해당 요소의 completed 를 반대로 변경
       this.todoItems[index].completed = !this.todoItems[index].completed
       //로컬스토리지의 데이터를 갱신, 저장된 값을 지움
@@ -46,14 +46,14 @@ export default {
       //completed가 false일 경우 true로, true일 경우 false로 변경된 채로 다시 추가 (JSON.stringify - 객체를 JSO으로 바꿔줌)
       localStorage.setItem(TodoItem.item, JSON.stringify(TodoItem));
     },
-    clearAllItem:function(){
+    clearAllItem(){
       //로컬스토리지 전체 값 삭제
       localStorage.clear();
       //배열 초기화
       this.todoItems = [];
     }
   },
-  created:function(){
+  created(){
     //로컬스토리지에 있는 
       if(localStorage.length > 0){
         for(var i=0;i < localStorage.length; i ++){
