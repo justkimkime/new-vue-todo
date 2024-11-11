@@ -5,10 +5,10 @@
     <!-- app -->
     <div id="app">
       <!-- use the modal component, pass in the prop -->
-      <AlertPop v-if="showModal" @close="showModal = false">
+      <AlertPop v-if="showModal" >
         <h3 slot="header">warning !</h3>
         <p slot="body">내용을 입력해주셈</p>
-        <div slot="footer"><i class="fas fa-times closeModalBtn"  @click="showModal = false"></i></div>
+        <template #footer><i class="fas fa-times closeModalBtn"  @click="showModal = false"></i></template>
       </AlertPop>
     </div>
   </div>
@@ -17,7 +17,7 @@
 <script>
 import AlertPop from "./common/ModalPop.vue";
 export default {
-  data:function(){
+  data(){
     return{
       //인풋에 입력되는 데이터
       newTodoItem:'',
@@ -25,7 +25,7 @@ export default {
     }
   },
   methods:{
-    addToDo:function(){
+    addToDo(){
       //입력된 것이 없으면 동작하지 않음
       if(this.newTodoItem != ''){
         
@@ -37,7 +37,7 @@ export default {
         this.showModal = !this.showModal;
       }
     },
-    clearInput:function(){
+    clearInput(){
       this.newTodoItem = '';
     }
   },
