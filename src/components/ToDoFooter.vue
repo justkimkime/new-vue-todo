@@ -1,18 +1,11 @@
 <template>
   <div class="clearAllContainer">
     <button class="clearAllBtn" @click="clearToDo">clear all</button>
-   <!-- <AlertPop v-if="showModal" @click="showModal = false">
-      <h3 slot="header">경고!</h3>
-      <template #body >
-        정말로 삭제하시겠습니까?
-      </template>
-      <div slot="footer"><button class="yesBtn btn"  @click="clearToDo">예</button><button class="btn"  @click="showModal = false">아니오</button></div>
-    </AlertPop>-->
+
   </div>
 </template>
 
 <script>
-import AlertPop from "./common/ModalPop.vue";
 export default {
   data:function(){
     return{
@@ -24,9 +17,6 @@ export default {
           this.$emit('clearAll')
         }
     },
-  components:{
-    AlertPop
-  }
 }
 </script>
 

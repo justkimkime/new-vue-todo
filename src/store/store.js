@@ -5,8 +5,6 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state:{
-        message:'hello',
-        num:1,
-        headerText:'TODO it! 11'
+        todoItems:[]
     }
 });

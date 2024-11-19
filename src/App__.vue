@@ -20,7 +20,8 @@ import ToDoFooter from "./components/ToDoFooter.vue";
 export default {
   data(){
     return{
-      todoItems:[]
+      todoItems:[],
+      
     }
   },
   methods:{
@@ -69,7 +70,7 @@ export default {
     ToDoHeader,
     ToDoInput,
     ToDoList,
-    ToDoFooter
+    ToDoFooter,
   },
 };
 </script>
