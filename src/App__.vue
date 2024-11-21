@@ -55,16 +55,7 @@ export default {
     }
   },
   created(){
-    //로컬스토리지에 있는 
-      if(localStorage.length > 0){
-        for(var i=0;i < localStorage.length; i ++){
-        if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
-          //JSON.parse : JSON을 객체로 바꿔줌
-          this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
-          //this.todoItems.push(localStorage.key(i))
-        }
-      }
-    }
+
   },
   components: {
     ToDoHeader,
